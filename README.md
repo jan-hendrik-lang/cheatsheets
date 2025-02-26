@@ -6,10 +6,10 @@ This repository is in the making and provides concise and practical cheat sheets
 
 ## Content
 
-[x] Windows Memory Forensics
-[x] Windows Registry Analysis for Forensics
-[ ] Network Forensics
-[ ] Log Analysis & SIEM
-[ ] Reverse Engineering & Malware Analysis
-[ ] Threat Hunting 
-[ ] Cloud Security
+- [x] Windows Memory Forensics
+- [x] Windows Registry Analysis for Forensics
+- [ ] Network Forensics
+- [ ] Log Analysis & SIEM
+- [ ] Reverse Engineering & Malware Analysis
+- [ ] Threat Hunting 
+- [ ] Cloud Security
