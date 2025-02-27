@@ -58,14 +58,14 @@
   windows.pslist
   ```
 - **Examples of Structured OS-Maintained Lists in Windows**:
-  a) PsActiveProcessHead (EPROCESS Active Process List) → Used by windows.pslist
-  - A doubly linked list that tracks active processes in the system.
-  - Each EPROCESS structure has a FLINK (forward link) and BLINK (backward link) pointer connecting it to other processes.
-  - Malware can unlink a process from this list to hide it.
-  b) LoadedModuleList (PEB/Kernel Module List) → Used by windows.modules
-  - Tracks loaded kernel drivers and modules.
-  - Located in nt!PsLoadedModuleList for kernel modules or in the Process Environment Block (PEB) for user-mode modules.
-  - Rootkits can unlink malicious drivers from this list to evade detection.
+  - PsActiveProcessHead (EPROCESS Active Process List) → Used by windows.pslist
+    - A doubly linked list that tracks active processes in the system.
+    - Each EPROCESS structure has a FLINK (forward link) and BLINK (backward link) pointer connecting it to other processes.
+    - Malware can unlink a process from this list to hide it.
+  - LoadedModuleList (PEB/Kernel Module List) → Used by windows.modules
+    - Tracks loaded kernel drivers and modules.
+    - Located in nt!PsLoadedModuleList for kernel modules or in the Process Environment Block (PEB) for user-mode modules.
+    - Rootkits can unlink malicious drivers from this list to evade detection.
 - **Scan Commands**: These commands use pool-scanning, meaning they search raw memory for object signatures or structures rather than relying on OS-managed lists. This technique helps detect hidden or unlinked objects, such as terminated or stealth processes. E.g.:
   ```bash
   windows.psscan
@@ -169,11 +169,11 @@
   windows.registry.hivelist --dump
   ```
 - **Analyze Dumped Registry Data:**
-  a) Use RegRipper3.0
+  - Use RegRipper3.0
   ```bash
-  .\\rip.exe -r "path\to\dumped_registry_hive" -f PROFILE > output.txt
+  .\rip.exe -r "path\to\dumped_registry_hive" -f PROFILE > output.txt
   ```
-  b) Use Eric Zimmerman´s Registry Explorer
+  - Use Eric Zimmerman´s Registry Explorer
 
 ## Code Injection Techniques
 
